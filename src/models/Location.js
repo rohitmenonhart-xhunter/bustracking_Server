@@ -1,5 +1,5 @@
 const { getSupabase } = require('../config/database');
-const { v4: uuidv4 } = require('uuid');
+const { randomUUID } = require('crypto');
 
 class Location {
   constructor(data) {
@@ -18,7 +18,7 @@ class Location {
     const { data, error } = await supabase
       .from('locations')
       .insert([{
-        id: uuidv4(),
+        id: randomUUID(),
         bus_number: locationData.busNumber,
         latitude: locationData.latitude,
         longitude: locationData.longitude,

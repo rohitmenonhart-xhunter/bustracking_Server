@@ -1,5 +1,5 @@
 const { executeQuery, executeBatchInsert } = require('../config/optimizedDatabase');
-const { v4: uuidv4 } = require('uuid');
+const { randomUUID } = require('crypto');
 
 class OptimizedLocation {
   constructor(data) {
@@ -20,7 +20,7 @@ class OptimizedLocation {
     `;
     
     const values = [
-      uuidv4(),
+      randomUUID(),
       locationData.busNumber,
       locationData.latitude,
       locationData.longitude,
@@ -38,7 +38,7 @@ class OptimizedLocation {
     
     const columns = ['id', 'bus_number', 'latitude', 'longitude', 'accuracy', 'timestamp', 'created_at'];
     const values = locationsData.map(loc => [
-      uuidv4(),
+      randomUUID(),
       loc.busNumber,
       loc.latitude,
       loc.longitude,
