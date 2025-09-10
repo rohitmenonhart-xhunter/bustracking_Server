@@ -1,0 +1,51 @@
+{
+  "name": "svce-bus-tracker-backend",
+  "version": "1.0.0",
+  "description": "Express backend for SVCE Bus Tracker with Supabase integration",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/optimizedServer.js",
+    "dev": "nodemon src/optimizedServer.js",
+    "start-basic": "node src/server.js",
+    "dev-basic": "nodemon src/server.js",
+    "setup": "node -e \"console.log(require('./src/utils/setupDatabase').getTableCreationSQL())\"",
+    "optimize-db": "node optimize-database.js",
+    "monitor": "node monitor-performance.js",
+    "load-test": "node monitor-performance.js test 100 30",
+    "load-test-heavy": "node monitor-performance.js test 500 60",
+    "health": "curl -s http://localhost:3000/health | jq",
+    "metrics": "curl -s http://localhost:3000/api/metrics | jq",
+    "test": "echo \"Tests coming soon...\" && exit 0"
+  },
+  "keywords": [
+    "express",
+    "bus-tracking",
+    "supabase",
+    "real-time",
+    "location"
+  ],
+  "author": "SVCE Bus Tracker Team",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.3",
+    "cluster": "^0.7.7",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-slow-down": "^3.0.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "node-cron": "^4.2.1",
+    "pg": "^8.16.3",
+    "pg-pool": "^3.10.1",
+    "redis": "^5.8.2",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
+}
