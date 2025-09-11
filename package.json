@@ -15,6 +15,7 @@
     "load-test-heavy": "node monitor-performance.js test 500 60",
     "health": "curl -s http://localhost:3000/health | jq",
     "metrics": "curl -s http://localhost:3000/api/metrics | jq",
+    "test-connection": "node test-connection.js",
     "test": "echo \"Tests coming soon...\" && exit 0"
   },
   "keywords": [
