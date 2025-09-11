@@ -2,7 +2,7 @@
   "name": "svce-bus-tracker-backend",
   "version": "1.0.0",
   "description": "Express backend for SVCE Bus Tracker with Supabase integration",
-  "main": "src/server.js",
+  "main": "src/optimizedServer.js",
   "scripts": {
     "start": "node src/optimizedServer.js",
     "dev": "nodemon src/optimizedServer.js",
